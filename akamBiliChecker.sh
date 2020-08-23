@@ -29,7 +29,7 @@ done
 [[ -n $proxy ]] && url=$(ykdl -J --proxy $proxy https://www.bilibili.com/video/BV1ss411h7t4 |  jq -r '.streams.BD.src[0]')
 [[ -z $proxy ]] && url=$(ykdl -J https://www.bilibili.com/video/BV1ss411h7t4 |  jq -r '.streams.BD.src[0]')
 [[ -z $url ]] && echo "ERROR: PLS check your ydkl, exit ..." && exit 0
-domain=$(echo $url | gawk -F[/:] '{print $4}')
+domain=$(echo $url | awk -F[/:] '{print $4}')
 [[ ! $url =~ $domain_name ]] && echo -e "ERROR: There is NO 'upos-hz-mirrorakam.akamaized.net' found in the url extracted by YKDL, pls check your PROXY settings or YKDL installation, the URL is \n>>> $url" && exit 0
 
 echo -e "Checking 'upos-hz-mirrorakam.akamaized.net' extracted by YKDL with: \n>>> $url\n"
@@ -65,9 +65,9 @@ ssl_verify_result: %{ssl_verify_result}\n\
 remote_ip: %{remote_ip}\n\
 http_code: %{http_code}\n\n" -A '' $resolve $url)
 
-d_speed=$(echo $out | gsed -r 's/.*speed_download: ([0-9]+).*/\1/')
-http_c=$(echo $out | gsed -r 's/.*http_code: ([0-9]+).*/\1/')
-curl_ip=$(echo $out | gsed -r 's/.*remote_ip: ([0-9\.]+).*/\1/')
+d_speed=$(echo $out | sed -r 's/.*speed_download: ([0-9]+).*/\1/')
+http_c=$(echo $out | sed -r 's/.*http_code: ([0-9]+).*/\1/')
+curl_ip=$(echo $out | sed -r 's/.*remote_ip: ([0-9\.]+).*/\1/')
 [[ -z $d_speed ]] && d_speed="0"
 [[ -z $http_c ]] && http_c="err"
 [[ -z $ip ]] && ip=$curl_ip

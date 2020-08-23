@@ -38,9 +38,13 @@ Mac OS 上建议安装 `gnu` 系列命令，如使用Mac OS原装的BSD sed和aw
 
 ### IP 列表配置：
 
-本项目下附带两个文件分别来自 [https://www.whatsmydns.net/#A/upos-hz-mirrorakam.akamaized.net](https://www.whatsmydns.net/#A/upos-hz-mirrorakam.akamaized.net)
+本项目下附带三个文件分别来自
 
-和 [https://www.17ce.com/cdn](https://www.17ce.com/cdn) 进行查询后的 IP 列表的**手动获得**，后者 IP 数量要远多于前者。譬如这次解析结果：[https://www.17ce.com/site/resolveip/20200823_9c392ef0e50211eaa3efcf9d6c96c620:1.html](https://www.17ce.com/site/resolveip/20200823_9c392ef0e50211eaa3efcf9d6c96c620:1.html)
+1. [https://www.whatsmydns.net/#A/upos-hz-mirrorakam.akamaized.net](https://www.whatsmydns.net/#A/upos-hz-mirrorakam.akamaized.net)
+
+2. 以及[https://www.17ce.com/cdn](https://www.17ce.com/cdn) 进行查询后的 IP 列表的**手动获得**，后者获得 IP 数量要多于前者。譬如这次解析结果：[https://www.17ce.com/site/resolveip/20200823_9c392ef0e50211eaa3efcf9d6c96c620:1.html](https://www.17ce.com/site/resolveip/20200823_9c392ef0e50211eaa3efcf9d6c96c620:1.html)
+
+3. 以及来自[akamTester](https://github.com/miyouzi/akamTester)的 akamTester_vX.0_ip_list
 
 由于可能会过期失效，请用户自行重新解析整理成可用 IP 列表。
 由于 whatsmydns 解析IP不是太全，因此放弃了自动获取 IP 列表的作法，请用户自行去获取 IP 列表，并制作成列表文件进行测试，或者使用本作携带的几个 IP 列表。
